@@ -42,7 +42,7 @@ A modern, responsive portfolio built with React, Vite, and Tailwind CSS.
 
 ## Add your Resume
 
-Place your PDF in `/assets/Jitendra_Kumar_Resume.pdf`.
+Place your PDF in `/public/Jitendra_Kumar_Resume.pdf`.
 
 ## Customization
 
