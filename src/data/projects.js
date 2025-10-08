@@ -1,0 +1,58 @@
+export default [
+  // {
+  //   title: "Personal Portfolio Website",
+  //   description: "React-based portfolio with blog, testimonials, and contact form.",
+  //   tech: ["React", "Vite", "Tailwind CSS"],
+  //   link: "https://github.com/Jitendra-kr-d/MyPortfolio",
+  //   demo: "",
+  // },
+  {
+    title: "Merchant Service Provider Project",
+    description: "Led integration of new features, bug fixes, and regular development in C#.NET for seamless delivery and enhanced functionality.",
+    tech: ["C#.NET", "TeamCity", "CI/CD"],
+    link: "",
+    demo: "",
+  },
+  {
+    title: "Centralized Syncing Service",
+    description: "Implemented a C#.NET service to synchronize data from multiple factories to a central server for streamlined management and reporting.",
+    tech: ["C#.NET"],
+    link: "",
+    demo: "",
+  },
+  {
+    title: "AI Chat-bot for Help Site",
+    description: "Developed an AI-based chat-bot in Golang to enhance user experience and provide efficient support services.",
+    tech: ["Golang", "AI"],
+    link: "",
+    demo: "",
+  },
+  {
+    title: "AI Blank Field Detection System",
+    description: "Created an AI system to identify and extract blank fields in PDF forms, improving data accuracy and processing efficiency.",
+    tech: ["AI", "PDF Processing"],
+    link: "",
+    demo: "",
+  },
+  {
+    title: "Microservices Conversion for Doc eSign",
+    description: "Converted backend microservices from Delphi to Golang, improving performance and scalability, and implemented new features.",
+    tech: ["Delphi", "Golang", "Microservices"],
+    link: "",
+    demo: "",
+  },
+  {
+    title: "Deep Learning Emotion Prediction",
+    description: "Developed a deep learning model for emotion prediction using face images, achieving 66% accuracy with FER-2023 and OAHEGA-ERD datasets.",
+    tech: ["Deep Learning", "Python", "FER-2023", "OAHEGA-ERD"],
+    link: "",
+    demo: "",
+  },
+  {
+    title: "Sentiment Analysis with Coyote Optimization",
+    description: "Implemented sentiment analysis using the Coyote Optimization Algorithm on COVID-19 Twitter data.",
+    tech: ["Python", "Coyote Optimization", "Twitter API"],
+    link: "",
+    demo: "",
+  },
+];
