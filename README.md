@@ -26,7 +26,10 @@ A modern, responsive portfolio built with React, Vite, and Tailwind CSS.
    ```
    npm run build
    ```
-5. Deploy to GitHub Pages or Vercel/Netlify.
+5. Deploy to GitHub Pages.
+   ```
+   npm run deploy
+   ```
 
 ## Tailwind Setup
 
