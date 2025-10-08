@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+const jkResume =import.meta.env.BASE_URL + "/Jitendra_Kumar_Resume.pdf"
+
 export default function DownloadCV() {
   return (
     <section className="container mx-auto px-4 py-8 flex flex-col items-center">
       <h2 className="text-2xl font-bold mb-4">Download My CV</h2>
       <a
-        href="/assets/Jitendra_Kumar_Resume.pdf"
+        href={jkResume}
         download
         target="_blank"
         rel="noopener noreferrer"

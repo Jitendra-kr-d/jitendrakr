@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+const profilePic =import.meta.env.BASE_URL + "/profile.jpg"
 
 export default function Home() {
   return (
     <section className="container mx-auto px-4 py-8">
       <div className="flex flex-col md:flex-row items-center gap-8 bg-white rounded-xl shadow-lg p-8">
         <img
-          src="/assets/profile.jpg"
+          src={profilePic}
           alt="Profile"
           className="w-32 h-32 rounded-full border-4 border-primary shadow-lg mb-4 md:mb-0 object-cover"
         />
