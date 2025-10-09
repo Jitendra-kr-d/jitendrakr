@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from 'lucide-react'; // Icons for the toggle button
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false); 
+  const location = useLocation();
+
   const navItems = [
     { label: "Home", path: "/" },
     { label: "Projects", path: "/projects" },
@@ -10,18 +14,26 @@ function Navbar() {
     { label: "Contact", path: "/contact" },
     { label: "Download CV", path: "/cv" },
   ];
-  const location = useLocation();
+
+  const handleLinkClick = () => {
+      setIsOpen(false); // Close menu when a link is clicked
+  }
 
   return (
     <nav className="bg-white shadow sticky top-0 z-50 mb-8">
+      {/* Main Bar Content */}
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         
-        {/* Logo/Brand Name (Always visible) */}
-        <Link to="/" className="font-bold text-xl text-primary hover:text-blue-700 transition">
+        {/* Logo/Brand Name */}
+        <Link 
+          to="/" 
+          className="font-bold text-xl text-primary hover:text-blue-700 transition"
+          onClick={() => setIsOpen(false)}
+        >
           AJ Solutions
         </Link>
         
-        {/* Navigation Links - Hidden on Mobile, shown on Small screens and up */}
+        {/* Desktop Navigation Links */}
         <ul className="hidden sm:flex space-x-2 md:space-x-4"> 
           {navItems.map((item) => (
             <li key={item.path}>
@@ -39,13 +51,61 @@ function Navbar() {
           ))}
         </ul>
         
-        {/* Placeholder for Mobile Menu Button (Hamburger) */}
-        <button className="sm:hidden text-gray-700 p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
+        {/* Mobile Menu Button */}
+        <button 
+          className="sm:hidden text-gray-700 p-2 focus:outline-none z-50"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
         
+      </div>
+
+      {/* ----------------------------------------------------------- */}
+      {/* Mobile Sidebar Content (Side Drawer) */}
+      {/* ----------------------------------------------------------- */}
+      
+      {/* 1. Overlay (to dim background) */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black opacity-30 sm:hidden z-40"
+          onClick={() => setIsOpen(false)} 
+        />
+      )}
+
+      {/* 2. Side Drawer Panel */}
+      <div className={`
+          fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 transform 
+          transition-transform duration-300 ease-in-out sm:hidden
+          ${isOpen ? 'translate-x-0' : 'translate-x-full'}
+      `}>
+          <div className="p-4 flex justify-end border-b">
+              {/* Close Button inside the sidebar */}
+              <button 
+                  className="text-gray-700 p-1 focus:outline-none"
+                  onClick={() => setIsOpen(false)}
+              >
+                  <X className="h-6 w-6" />
+              </button>
+          </div>
+          
+          <ul className="flex flex-col space-y-2 p-4"> 
+              {navItems.map((item) => (
+                  <li key={item.path}>
+                      <Link
+                          to={item.path}
+                          onClick={handleLinkClick} // Close menu on link click
+                          className={`block py-3 px-3 rounded transition font-medium text-base ${
+                              location.pathname === item.path
+                                  ? "bg-primary text-white shadow"
+                                  : "hover:bg-blue-100 text-gray-700 hover:text-blue-700"
+                          }`}
+                      >
+                          {item.label}
+                      </Link>
+                  </li>
+              ))}
+          </ul>
       </div>
     </nav>
   );
