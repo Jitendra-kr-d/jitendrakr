@@ -1,17 +1,41 @@
-import React, { useState } from "react";
+import React from "react";
 import testimonials from "../data/testimonials";
+import { Quote } from 'lucide-react'; // Icon for visual flair
 
 export default function Testimonials() {
   return (
-    <section className="container mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold mb-4">Testimonials</h2>
-      <div className="space-y-6">
+    <section className="container mx-auto px-4 py-12 max-w-6xl">
+      
+      {/* Header Section */}
+      <div className="text-center mb-10">
+        <h2 className="text-4xl font-extrabold text-gray-900 mb-3">What People Say</h2>
+        <p className="text-lg text-gray-600">Hear from colleagues, leads, and clients about my work ethic and expertise.</p>
+      </div>
+
+      {/* Testimonials Grid Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {testimonials.map((t, idx) => (
-          <div key={idx} className="bg-white rounded-xl shadow p-5 border border-gray-100 hover:shadow-lg hover:border-primary transition">
-            <blockquote className="italic">"{t.text}"</blockquote>
-            <div className="mt-2 flex items-center">
-              <span className="font-semibold">{t.name}</span>
-              {t.role && <span className="ml-2 text-gray-500 text-sm">({t.role})</span>}
+          <div 
+            key={idx} 
+            className="bg-white rounded-xl shadow-xl p-6 h-full flex flex-col justify-between 
+                       border-t-4 border-primary hover:shadow-2xl transition duration-300"
+          >
+            {/* Quote Icon */}
+            <Quote className="w-8 h-8 text-accent mb-4" fill="#f59e42" strokeWidth={0} /> 
+            
+            {/* Testimonial Text */}
+            <blockquote className="text-gray-700 text-lg leading-relaxed mb-6 italic flex-grow">
+                "{t.text}"
+            </blockquote>
+            
+            {/* Author and Role */}
+            <div className="border-t pt-4">
+              <span className="font-bold text-lg text-gray-900 block">{t.name}</span>
+              {t.role && (
+                <span className="text-sm text-primary font-medium mt-1">
+                    {t.role}
+                </span>
+              )}
             </div>
           </div>
         ))}

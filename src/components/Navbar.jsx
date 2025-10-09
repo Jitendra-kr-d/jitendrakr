@@ -15,7 +15,7 @@ function Navbar() {
   return (
     <nav className="bg-white shadow sticky top-0 z-50 mb-8">
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
-        <span className="font-bold text-lg text-primary">Jitendra Kumar</span>
+        <span className="font-bold text-lg text-primary">AJ Solutions</span>
         <ul className="flex space-x-4">
           {navItems.map((item) => (
             <li key={item.path}>
