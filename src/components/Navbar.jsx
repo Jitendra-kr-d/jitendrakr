@@ -14,17 +14,23 @@ function Navbar() {
 
   return (
     <nav className="bg-white shadow sticky top-0 z-50 mb-8">
-      <div className="container mx-auto px-4 py-2 flex justify-between items-center">
-        <span className="font-bold text-lg text-primary">AJ Solutions</span>
-        <ul className="flex space-x-4">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+        
+        {/* Logo/Brand Name (Always visible) */}
+        <Link to="/" className="font-bold text-xl text-primary hover:text-blue-700 transition">
+          AJ Solutions
+        </Link>
+        
+        {/* Navigation Links - Hidden on Mobile, shown on Small screens and up */}
+        <ul className="hidden sm:flex space-x-2 md:space-x-4"> 
           {navItems.map((item) => (
             <li key={item.path}>
               <Link
                 to={item.path}
-                className={`py-1 px-3 rounded transition font-medium ${
+                className={`py-2 px-3 rounded-full text-sm md:text-base transition font-medium ${
                   location.pathname === item.path
                     ? "bg-primary text-white shadow"
-                    : "hover:bg-blue-100 text-blue-700"
+                    : "hover:bg-blue-100 text-gray-700 hover:text-blue-700"
                 }`}
               >
                 {item.label}
@@ -32,6 +38,14 @@ function Navbar() {
             </li>
           ))}
         </ul>
+        
+        {/* Placeholder for Mobile Menu Button (Hamburger) */}
+        <button className="sm:hidden text-gray-700 p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+        
       </div>
     </nav>
   );
