@@ -30,7 +30,7 @@ function Navbar() {
           className="font-bold text-xl text-primary hover:text-blue-700 transition"
           onClick={() => setIsOpen(false)}
         >
-          AJ Solutions
+          Jitendra Kumar
         </Link>
         
         {/* Desktop Navigation Links */}
