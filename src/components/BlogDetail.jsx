@@ -19,27 +19,44 @@ export default function BlogDetail() {
   }
 
   return (
-    // 1. Constrain max width for better reading experience (like a typical blog)
-    <section className="container mx-auto px-4 py-8 max-w-4xl"> 
+    <section className="container mx-auto px-4 py-8 max-w-4xl animate-fadeIn"> 
       <Link 
         to="/blog" 
-        className="text-blue-600 hover:underline mb-10 flex items-center w-fit transition-colors"
+        className="text-blue-600 hover:text-blue-800 mb-10 inline-flex items-center transition-colors font-semibold group"
       >
-        &larr; Back to Blog
+        <svg className="w-5 h-5 mr-2 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to Blog
       </Link>
       
-      <h2 className="text-4xl font-extrabold mb-2 text-gray-900">{blog.title}</h2>
+      <article>
+        <header className="mb-8">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 leading-tight">{blog.title}</h1>
+          
+          <div className="flex items-center text-gray-500 pb-4 border-b-2 border-gray-200">
+            <Calendar className="w-5 h-5 mr-2 text-blue-600" />
+            <time dateTime={blog.date} className="font-medium">{blog.date}</time>
+          </div>
+        </header>
+        
+        <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-a:text-blue-600 prose-strong:text-gray-900 prose-code:text-purple-600 prose-pre:bg-gray-900">
+          <div 
+            dangerouslySetInnerHTML={{ __html: blog.content }} 
+          />
+        </div>
+      </article>
       
-      <div className="flex items-center text-gray-500 mb-8 border-b pb-3">
-        <Calendar className="w-5 h-5 mr-2" />
-        <p className="font-medium">{blog.date}</p>
-      </div>
-      
-      {/* 2. Apply the 'prose' class to style the raw HTML content */}
-      <div className="prose max-w-none prose-lg">
-        <div 
-          dangerouslySetInnerHTML={{ __html: blog.content }} 
-        />
+      <div className="mt-12 pt-8 border-t-2 border-gray-200">
+        <Link 
+          to="/blog" 
+          className="text-blue-600 hover:text-blue-800 inline-flex items-center transition-colors font-semibold group"
+        >
+          <svg className="w-5 h-5 mr-2 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Blog
+        </Link>
       </div>
     </section>
   );

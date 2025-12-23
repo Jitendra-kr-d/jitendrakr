@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jitendra-kr-d.github.io/jitendrakr/sitemap.xml
