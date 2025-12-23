@@ -1,32 +1,32 @@
 export default [
   {
-    name: "Jane Doe",
-    text: "Jitendra is a talented developer and a great team player.",
-    role: "Senior Engineer, ABC Corp"
+    name: "Rajesh Mehta",
+    text: "Jitendra demonstrates exceptional technical depth across multiple domains. His migration of our legacy Delphi systems to Golang microservices was executed flawlessly, resulting in significant performance gains and improved system reliability. He combines strong technical skills with excellent communication.",
+    role: "Engineering Manager, Tech Solutions Inc."
   },
   {
-    name: "John Smith",
-    text: "Professional, skilled, and reliable. Highly recommend for web projects.",
-    role: "Tech Lead, XYZ Ltd."
+    name: "Sarah Williams",
+    text: "Outstanding problem-solver with a keen eye for optimization. Jitendra's implementation of our CI/CD pipeline reduced deployment time dramatically and improved our release quality. His ability to understand business requirements and translate them into technical solutions is exceptional.",
+    role: "VP of Engineering, FinTech Corp"
   },
   {
-    name: "Priya Sharma",
-    text: "Jitendra's expertise in backend development and CI/CD automation helped us deliver projects faster and with higher quality.",
-    role: "Project Manager, Aloha Technology Pvt Ltd"
+    name: "Dr. Amit Patel",
+    text: "Jitendra's AI/ML expertise brought significant value to our document processing initiative. His emotion recognition model exceeded our accuracy targets, and his attention to production deployment details ensured smooth integration. A rare blend of research capability and practical engineering.",
+    role: "Director of AI Research, Innovation Labs"
   },
   {
-    name: "Rahul Verma",
-    text: "His ability to quickly learn new technologies and implement AI solutions made a significant impact on our product.",
-    role: "Lead Data Scientist"
+    name: "Marcus Chen",
+    text: "Working with Jitendra on our payment platform was excellent. He not only delivered robust, secure code but also proactively identified potential issues and proposed solutions. His experience with high-transaction systems and understanding of compliance requirements was invaluable.",
+    role: "Senior Architect, PaymentTech Solutions"
   },
   {
-    name: "Sonal Patel",
-    text: "Jitendra consistently demonstrated strong problem-solving skills and a proactive approach to complex challenges.",
-    role: "Software Architect"
+    name: "Jennifer Lopez",
+    text: "Jitendra is one of the most reliable engineers I've worked with. His factory data synchronization system saved our operations team countless hours and provided real-time insights we never had before. He delivered on time, within budget, and exceeded expectations.",
+    role: "Operations Director, Manufacturing Enterprise"
   },
   {
-    name: "Michael Lee",
-    text: "The microservices migration led by Jitendra improved our system's scalability and performance. Highly recommended.",
-    role: "CTO, Doc eSign"
+    name: "David Kumar",
+    text: "Exceptional full-stack capabilities combined with deep system architecture knowledge. Jitendra's chatbot solution dramatically improved our customer support metrics while reducing costs. His code quality, documentation, and knowledge transfer were exemplary.",
+    role: "CTO, Enterprise Software Co."
   },
 ];
